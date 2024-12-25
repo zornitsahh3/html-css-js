@@ -1,0 +1,50 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+    perspective: 1000px; 
+}
+
+.carousel {
+    position: relative;
+    transform-style: preserve-3d;
+    margin-top: 50px;
+    transition: transform 1s;
+    animation: rotate 10s infinite linear;
+}
+
+.square {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: 10px;
+    top: 10px;
+    transition:transofrm 1s, opacity 1s;
+    transform-style: preserve-3d; 
+}
+
+.s1 { background-color: red; transform: rotateY(0deg) translateZ(150px); }
+.s2 { background-color: green; transform: rotateY(60deg) translateZ(150px); }
+.s3 { background-color: blue; transform: rotateY(120deg) translateZ(150px); }
+.s4 { background-color: yellow; transform: rotateY(180deg) translateZ(150px); }
+.s5 { background-color: purple; transform: rotateY(240deg) translateZ(150px); }
+.s6 { background-color: gray; transform: rotateY(300deg) translateZ(150px); }
+
+#toggleText {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+    user-select: none;
+}
+
+@keyframes rotate {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
